@@ -357,6 +357,7 @@
       const [showAuthModal, setShowAuthModal] = useState(false);
       const [password, setPassword] = useState('');
       const [authError, setAuthError] = useState(false);
+      const [isVerifyingAuth, setIsVerifyingAuth] = useState(false);
       const [adminPassword, setAdminPassword] = useState('1234'); 
 
       const [showImageModal, setShowImageModal] = useState(false);
@@ -921,4 +922,5 @@
     root.render(<App />);
   </script>
 </body>
+
 </html>
