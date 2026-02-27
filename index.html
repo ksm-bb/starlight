@@ -229,7 +229,7 @@
     ));
 
     const TaskCard = memo(({ task, isAdmin, onEdit, onToggleDoing, onToggleStatus }) => (
-      <div onClick={() => isAdmin && onEdit(task)} className={`relative mb-2 rounded-[22px] p-3 transition-all border shadow-sm group backdrop-blur-sm ${isAdmin ? 'active:scale-[0.97] cursor-pointer' : ''}`} style={{ backgroundColor: task.status === 'done' ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.9)', borderColor: task.status === 'doing' ? COLORS.orange : (task.status === 'done' ? 'transparent' : COLORS.white), opacity: task.status === 'done' ? 0.7 : 1 }}>
+      <div onClick={() => isAdmin && onEdit(task)} className={`relative rounded-[22px] p-3 transition-all border shadow-sm group backdrop-blur-sm ${isAdmin ? 'active:scale-[0.97] cursor-pointer' : ''}`} style={{ backgroundColor: task.status === 'done' ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.9)', borderColor: task.status === 'doing' ? COLORS.orange : (task.status === 'done' ? 'transparent' : COLORS.white), opacity: task.status === 'done' ? 0.7 : 1 }}>
         {task.status === 'doing' && (
            <div className="absolute inset-0 pointer-events-none z-0">
              <div className="absolute -bottom-2 -left-3 text-[14px] animate-float-particle-1 drop-shadow-sm">✨</div>
@@ -645,7 +645,7 @@
                       <h2 className="text-[11px] font-semibold text-[#FDB813] uppercase tracking-widest opacity-90">Today's Task</h2>
                       <div className="h-[1px] flex-1 bg-gradient-to-r from-[#FDB813]/50 to-transparent mx-3"></div>
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2.5">
                       {todayTasks.length > 0 ? todayTasks.map(t => <TaskCard key={t.id} task={t} isAdmin={isAdmin} onEdit={handleEditTask} onToggleDoing={toggleDoing} onToggleStatus={toggleStatus} />) : (
                         <div className="text-center py-10 bg-white/50 rounded-[24px] border-2 border-dashed border-[#FDB813]/30 backdrop-blur-sm">
                           <p className="text-[10px] font-medium text-[#0B1930] uppercase tracking-widest opacity-60">Stars are aligned ✨</p>
@@ -678,7 +678,7 @@
 
                     {isCalendarView && <CalendarView currentMonth={currentMonth} setCurrentMonth={setCurrentMonth} selectedDate={selectedDate} setSelectedDate={setSelectedDate} today={today} tasks={tasks} />}
 
-                    <div className="space-y-1.5">
+                    <div className="space-y-2.5">
                       {displayedTasks.length > 0 ? displayedTasks.map(t => <TaskCard key={t.id} task={t} isAdmin={isAdmin} onEdit={handleEditTask} onToggleDoing={toggleDoing} onToggleStatus={toggleStatus} />) : (
                         <div className="text-center py-10 bg-white/50 rounded-[24px] border-2 border-dashed border-white shadow-sm mt-4 backdrop-blur-sm">
                           <p className="text-[11px] font-medium uppercase tracking-widest opacity-60" style={{ color: COLORS.textMain }}>
@@ -923,3 +923,4 @@
 </body>
 
 </html>
+
